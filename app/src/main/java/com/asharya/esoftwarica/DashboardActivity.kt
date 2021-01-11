@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.asharya.esoftwarica.fragments.AboutFragment
 import com.asharya.esoftwarica.fragments.AddStudentFragment
 import com.asharya.esoftwarica.fragments.HomeFragment
+import com.asharya.esoftwarica.models.Student
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DashboardActivity : AppCompatActivity() {
@@ -16,6 +17,7 @@ class DashboardActivity : AppCompatActivity() {
         val homeFragment = HomeFragment()
         val aboutFragment = AboutFragment()
         val addStudentFragment = AddStudentFragment()
+        addDummyStudent()
 
         setFragment(homeFragment)
 
@@ -37,4 +39,16 @@ class DashboardActivity : AppCompatActivity() {
             addToBackStack(null)
             commit()
         }
+
+    private fun addDummyStudent()  {
+        DataStore.studentList.add(
+            Student(
+                "Asharya Pandey",
+                20,
+                "Male",
+                "Banepa",
+                "https://lumiere-a.akamaihd.net/v1/images/darth-vader_6bda9114_e7820538.jpeg?region=0%2C70%2C1400%2C788"
+            )
+        )
+    }
 }
