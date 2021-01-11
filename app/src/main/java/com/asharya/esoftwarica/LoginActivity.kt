@@ -38,5 +38,19 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-
+    private fun validate(): Boolean {
+        when {
+            TextUtils.isEmpty(etUsername.text) -> {
+                etUsername.error = "Please Enter a Username"
+                etUsername.requestFocus()
+                return false
+            }
+            TextUtils.isEmpty(etPassword.text) -> {
+                etPassword.error = "Please Enter a Username"
+                etPassword.requestFocus()
+                return false
+            }
+        }
+        return true
+    }
 }
