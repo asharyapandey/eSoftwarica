@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/miHome"
+        android:title="Home"
+        android:icon="@drawable/ic_home"/>
 
-
+    <item
+        android:id="@+id/miAddStudent"
+        android:title="Add Student"
+        android:icon="@drawable/ic_student"/>
+    <item
+        android:id="@+id/miAboutUs"
+        android:title="About Us"
+        android:icon="@drawable/ic_about_us"/>
 </menu>
