@@ -4,9 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.asharya.esoftwarica.DataStore
 import com.asharya.esoftwarica.R
 import com.asharya.esoftwarica.fragments.HomeFragment
 import com.asharya.esoftwarica.models.Student
@@ -19,7 +21,7 @@ class StudentAdapter(val listStudent: List<Student>, val context: HomeFragment) 
         val address : TextView
         val sex : TextView
         val age : TextView
-        val btnDelete : Button
+        val btnDelete : ImageButton
 
         init {
             imgProfile = view.findViewById(R.id.imgProfile)
@@ -48,6 +50,7 @@ class StudentAdapter(val listStudent: List<Student>, val context: HomeFragment) 
         holder.age.text = student.age.toString()
 
         holder.btnDelete.setOnClickListener {
+            DataStore.studentList.removeAt(position)
             this.notifyItemRemoved(position)
         }
     }
