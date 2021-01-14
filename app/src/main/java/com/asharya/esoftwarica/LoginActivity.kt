@@ -46,7 +46,7 @@ class LoginActivity : AppCompatActivity() {
                 return false
             }
             TextUtils.isEmpty(etPassword.text) -> {
-                etPassword.error = "Please Enter a Username"
+                etPassword.error = "Please Enter a Password"
                 etPassword.requestFocus()
                 return false
             }

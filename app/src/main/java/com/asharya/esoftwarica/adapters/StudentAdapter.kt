@@ -51,7 +51,7 @@ class StudentAdapter(val listStudent: List<Student>, val context: HomeFragment) 
 
         holder.btnDelete.setOnClickListener {
             DataStore.studentList.removeAt(position)
-            this.notifyItemRemoved(position)
+            this.notifyDataSetChanged()
         }
     }
 
